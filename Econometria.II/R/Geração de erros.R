@@ -1,8 +1,8 @@
 #' Gerador de erros
 #'
-#' Cria um vetor 1xT de erros aleatórios de acorodo com a distribuição (e parâmetros desta) escolhida
+#' Cria um vetor de erros aleatórios, criados de acordo com a distribuição escolhida e seus parâmetros.
 #'
-#' @param dist O comportamento do erro do modelo. O nome (string) de qualqer função geradora de do pacote {stats} <https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Distributions.html>, ou "arma" para modelar o erro como um arma (o erro desse modelo é uma normal padrão) [EXPANDIR PARAR OUTRAS POSSIBILIDADES].
+#' @param dist O comportamento do erro do modelo. O nome (string) de qualqer função geradora de do pacote {stats} <https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Distributions.html>, ou "arma" para modelar o erro como um arma (o erro desse modelo é uma normal padrão).
 #' @param args Uma lista com os parâmetros que a função escolhida em dist precisem. Se escolhido arma, passar uma lista no formato: list(dist = ..distribuição dos erros dentre as opções de stats.., args = ..argumentos da distribuição.., intercepto = ..valor do intercepto.., ar = ..vetor com os coeficientes ar.., ma = ..vetor com os coeficientes ma..).
 #' @export
 

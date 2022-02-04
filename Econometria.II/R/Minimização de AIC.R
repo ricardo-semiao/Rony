@@ -1,4 +1,4 @@
-#' min.AIC
+#' Encontra as parâmetros p, q e d do modelo ARIMA que minimizem a estatística AIC.
 #'
 #' @param Y A série real para se estimar os coeficientes.
 #' @param pmax a maior ordem do ar a ser estimado para procurar o AIC mínimo.
@@ -29,13 +29,14 @@ min.AIC = function(Y, pmax=6, qmax=6, dmax=2){
 
   a = arima(Y, order=c(p,d,q))
   H0 = list(intercepto=a$coef[p+q+1], ar=a$coef[1:p], ma=a$coef[(p+1):(p+q)])
-  Estimação = fitted(a)
+  Estimação = Y - a$residuals
   Índice = 1:length(Y)
 
+  plot(ggplot(mapping=aes(y=Estimação, x=Índice)) + geom_line(size=0.5))
+
   return(list(
-    ggplot(mapping=aes(y=Estimação, x=Índice)) + geom_line(size=0.5),
-    H0,
-    c(p,d,q)))}
+    "Coefficients"=H0,
+    "Parameters"=c("p"=p,"d"=d,"q"=q)))}
 
 #TESTE
 #Y = simulacao.serie(dist="rnorm", args=list(n=100, mean=0, sd=1), H0=list(intercepto=0,ar=c(0.5, 0.25),ma=c()))
