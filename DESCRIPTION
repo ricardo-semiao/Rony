@@ -1,0 +1,16 @@
+Package: Rony
+Type: Package
+Title: Funções de time series
+Version: 0.1
+Author: Ricardo Semião e Castro <ric.s.c@hotmail.com>
+Maintainer: Ricardo Semião e Castro <ric.s.c@hotmail.com>
+Description: Funções criadas nos tutoriais de econometria II da FGV-EESP (2020).
+Depends:
+  itsmr,
+  mFilter,
+  ggplot2,
+  dynlm,
+  lmtest
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
